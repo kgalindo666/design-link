@@ -3,10 +3,20 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema({
 
-    name: String,
-    email: String,
-    googleId: String,
+    designerName: 'String',
+    userName: 'String',
+    website: 'String',
+    bio: 'String'
 
 })
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema)
+/*
+
+
+const commentSchema = new Schema({
+
+    author: String,
+    content: String
+})
+*/

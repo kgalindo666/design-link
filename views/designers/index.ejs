@@ -13,22 +13,21 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Google ID</th>
+        <th>@</th>
       </tr>
     </thead>
     <tbody>
       <% designers.forEach((d) => { %>
       <tr>
-        <td><%= d.name %></td>
-        <td><%= d.googleId %></td>
+        <td><%= d.designerName %></td>
+        <td><%= d.userName %></td>
         <td><a href="/designers/<%= d._id %>">DETAILS</a></td>
       </tr>
       <% }); %>
     </tbody>
 
-    
-  </table>
+<button>HOME</button>
 
-<a href="/designers/new">ADD A NEW DESIGNER</a>
+  </table>
   </body>
 </html>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title><%= title %></title>
@@ -8,20 +9,22 @@
 
  <h1><%=  title  %></h1>
  
-
-
  <table id="list">
         <thead>
           <tr>
             <th>Name</th>
-            <th>Google ID</th>
+            <th>Username</th>
+            <th>Website</th>
+            <th>Bio</th>
           </tr>
         </thead>
         <tbody>
     
           <tr>
-            <td><%= designer.name %></td>
-            <td><%= designer.googleId %></td>
+            <td><%= designer.designerName %></td>
+            <td><%= designer.userName %></td>
+            <td><%= designer.website %></td>
+            <td><%= designer.bio %></td>
           </tr>
           
         </tbody>

@@ -2,7 +2,9 @@
 const User = require('../models/user');
 
 const index = (req, res) => {
+
     User.find({}, (err, users) => {
+        console.log(users)
         res.render('designers/index', { title: 'DESIGNERS LIST',
         designers: users
         })
@@ -29,6 +31,9 @@ const editProfile = (req, res) => {
     console.log('hit create', req.body)
 res.render('designers/myaccount')
 
+}
+
+
 
 /*         for (let key in req.body) {
           if (req.body[key] === '') delete req.body[key]
@@ -40,13 +45,13 @@ res.render('designers/myaccount')
           res.redirect(`/movies/${movie._id}`)
         }) */
        
-}
+
 
 
 module.exports = {
     index,
     show,
-    editProfile
+    editProfile,
    // new: newDes,
 } 
 
