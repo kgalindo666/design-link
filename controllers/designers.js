@@ -27,11 +27,22 @@ const newDes = (req, res) => {
 }
 
 
-const editProfile = (req, res) => {
-    console.log('hit create', req.body)
-res.render('designers/myaccount')
+const edit = (req, res) => {
+res.render('designers/edit', {userId: req.params.id})
+
+//
 
 }
+
+const update = (req, res) =>  {
+    User.findByIdAndUpdate(req.params.id, req.body, ()=>{
+        console.log('we updated')
+        res.redirect(`/designers/${req.params.id}`)
+    })
+}
+
+
+
 
 
 
@@ -51,7 +62,8 @@ res.render('designers/myaccount')
 module.exports = {
     index,
     show,
-    editProfile,
+    edit,
+    update,
    // new: newDes,
 } 
 

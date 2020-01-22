@@ -4,8 +4,10 @@ const designersCtrl = require('../controllers/designers');
 
 
 router.get('/', designersCtrl.index)
-router.get('/myaccount', designersCtrl.editProfile)
 router.get('/:id', designersCtrl.show)
+router.get('/:id/edit', designersCtrl.edit)
+router.put('/:id', designersCtrl.update)
+
 
 
 // router.post('/myaccount', designersCtrl.newDes)
