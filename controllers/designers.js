@@ -24,8 +24,12 @@ const newDes = (req, res) => {
     })
 }
 
-const create = (req, res) => {
+
+const editProfile = (req, res) => {
     console.log('hit create', req.body)
+res.render('designers/myaccount')
+
+
 /*         for (let key in req.body) {
           if (req.body[key] === '') delete req.body[key]
         }
@@ -42,7 +46,7 @@ const create = (req, res) => {
 module.exports = {
     index,
     show,
-    create,
-    new: newDes,
+    editProfile
+   // new: newDes,
 } 
 

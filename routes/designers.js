@@ -4,9 +4,10 @@ const designersCtrl = require('../controllers/designers');
 
 
 router.get('/', designersCtrl.index)
-router.get('/new', designersCtrl.new)
+router.get('/myaccount', designersCtrl.editProfile)
 router.get('/:id', designersCtrl.show)
 
-router.post('/create', designersCtrl.create)
+
+// router.post('/myaccount', designersCtrl.newDes)
 
 module.exports = router;

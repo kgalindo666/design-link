@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'DesignLink' });
 });
 
-// PASSPORT ROUTES
+// PASSPORT ROUTES 
 
 router.get(
   '/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] })
@@ -16,7 +16,7 @@ router.get(
 router.get(
   '/oauth2callback',
   passport.authenticate('google', {
-    successRedirect: '/',
+    successRedirect: 'designers/myaccount',
     failureRedirect: '/',
   })
 )
