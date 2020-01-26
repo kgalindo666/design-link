@@ -20,17 +20,9 @@ const show = (req, res) => {
  })
 }
 
-const newDes = (req, res) => {
-    res.render('designers/new', {
-        title: 'new designer form',
-    })
-}
-
-
 const edit = (req, res) => {
 res.render('designers/edit', {userId: req.params.id})
 
-//
 
 }
 
@@ -41,21 +33,14 @@ const update = (req, res) =>  {
     })
 }
 
+const newComment = (req, res) => {
+
+    // console.log('NEW COMMENT PAGEs')
+    res.render('designers/comment', {userId: req.params.id})
+  
+}
 
 
-
-
-
-/*         for (let key in req.body) {
-          if (req.body[key] === '') delete req.body[key]
-        }
-        var newDesigner = new Designer(req.body)
-        newDesigner.save(err => {
-          if (err) return res.redirect('/movies/new')
-          // res.redirect('/movies');
-          res.redirect(`/movies/${movie._id}`)
-        }) */
-       
 
 
 
@@ -64,6 +49,7 @@ module.exports = {
     show,
     edit,
     update,
-   // new: newDes,
+    newComment,
+   
 } 
 

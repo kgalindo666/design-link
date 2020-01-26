@@ -7,9 +7,9 @@ router.get('/', designersCtrl.index)
 router.get('/:id', designersCtrl.show)
 router.get('/:id/edit', designersCtrl.edit)
 router.put('/:id', designersCtrl.update)
+router.get('/:id/comments', designersCtrl.newComment)
 
 
 
-// router.post('/myaccount', designersCtrl.newDes)
 
 module.exports = router;
