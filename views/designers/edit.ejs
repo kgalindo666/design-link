@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/designers/edit.css' />
   </head>
   <body>
 
 
- <form action="/designers/<%= userId %>?_method=PUT" method="POST">
+ <form action="/designers/<%= designer._id %>?_method=PUT" method="POST">
 
   
 <h1>Hello! Welcome to your account!</h1>
-<h1>You can make any changes to you account info here!</h1>
 
 
   <label>Username</label>
-  <input type="text" name="username">
+  <input type="text" name="name" value="<%= designer.name%>">
   <label>Website</label>
   <input type="text" name="website">
   <label>Bio</label>
   <input type="text" name="bio">
  
-
   <button type="submit">Save Changes</button>
   <button>See your Profile</button>
  

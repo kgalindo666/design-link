@@ -21,15 +21,28 @@ const show = (req, res) => {
 }
 
 const edit = (req, res) => {
-res.render('designers/edit', {userId: req.params.id})
-
+    User.findById(req.params.id, (err, user) => {
+        res.render('designers/edit', {
+            title: 'designer edit page',
+            designer: user,
+        })
+    })
 
 }
 
 const update = (req, res) =>  {
-    User.findByIdAndUpdate(req.params.id, req.body, ()=>{
+    console.log(req.body)
+    User.findByIdAndUpdate(req.params.id, req.body, () => {
         console.log('we updated')
         res.redirect(`/designers/${req.params.id}`)
+    })
+}
+
+const myDelete = (req, res) => {
+    console.log(req.body)
+    User.findByIdAndDelete(req.params.id, req.body, () => {
+        console.log('We deleted')
+        res.redirect(`/designers`)
     })
 }
 
@@ -37,19 +50,16 @@ const newComment = (req, res) => {
 
     // console.log('NEW COMMENT PAGEs')
     res.render('designers/comment', {userId: req.params.id})
-  
 }
 
-
-
-
-
 module.exports = {
+
     index,
     show,
     edit,
     update,
     newComment,
+    myDelete
    
-} 
+}
 
